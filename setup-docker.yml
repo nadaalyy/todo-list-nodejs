@@ -1,0 +1,26 @@
+- name: Install Docker on RedHat VM
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install required packages
+      yum:
+        name:
+          - device-mapper-persistent-data
+          - lvm2
+        state: present
+
+    - name: Add Docker CE repository
+      get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docker-ce.repo
+
+    - name: Install Docker
+      yum:
+        name: docker-ce
+        state: latest
+
+    - name: Start and enable Docker
+      systemd:
+        name: docker
+        enabled: yes

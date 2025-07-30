@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+    todo-app:
+        image: nadahesham22/todo-list-nodejs:latest
+        ports:
+            - "4000:4000"
+        environment:
+            - MONGO_URL=mongodb+srv://nadaheshamaly10:<db_password>@cluster0.pvib5ek.>
+        restart: always
+        healthcheck:
+            test: [ "CMD", "curl", "-f", "http://localhost:4000" ]
+            interval: 30s
+            timeout: 10s
+            retries: 3
+    watchtower:
+        image: containrrr/watchtower
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        command: --interval 30
