@@ -1,109 +1,110 @@
+# Todo List Node.js – DevOps Task
 
-## Documentation
+## Part 1 - Dockerize the application, CI Pipeline with Docker and GitHub Actions
 
-[Documentation](https://linktodocumentation)
+###  Step 1: Clone the Repository
+- Started by cloning the following repository to my local machine:https://github.com/Ankit6098/Todo-List-nodejs
 
-📝 To-Do List nodeJs
+### Step 2: Configure MongoDB
+- Created a MongoDB cluster using MongoDB Atlas.  
+Then, update the `.env` file in the project with my MongoDB URI:
 
-The to-do list application is a web-based application that allows users to create and manage a list of tasks. The user interface consists of a form to add new tasks, a list of all tasks, and controls to mark tasks as complete or delete them.
+### Step 3: Dockerize the Application
+- Created a `Dockerfile` to containerize the Node.js app.  
+Then, built and tested the Docker image (node-app) locally:
 
-To create the application, Node.js is used to set up the server and handle the logic of the application. Express.js is used to create the routes for the application, allowing the user to interact with the application through a web browser. EJS is used to create the views for the application, allowing the user to see the list of tasks and the form to add new tasks. CSS is used to style the application, making it visually appealing and easy to use.
-
-MongoDB and Mongoose are used to store the tasks in a database, allowing the user to add, delete, and update tasks as needed. Nodemon is used to monitor changes to the code and automatically restart the server, making it easy to develop and test the application.
-
-When the user adds a new task using the form, Node.js and Express.js handle the request and store the task in the database using Mongoose. When the user views the list of tasks, EJS displays the tasks from the database in a list on the web page. When the user marks a task as complete or deletes a task, Node.js and Express.js handle the request and update the database using Mongoose.
-
-Overall, the todo list application using Node.js, Express.js, EJS, CSS, JavaScript, MongoDB, Mongoose, and Nodemon can be a great way to create a functional and interactive web application that allows users to manage their tasks online. With the right combination of technologies, it is possible to create an application that is both functional and aesthetically pleasing, making it easy for users to manage their tasks in a convenient and efficient way.
-
-Technologies Used: NodeJS, ExpressJS, EJS, CSS, JavaScript, Nodemon, MongoDB, Mongoose.
-## Demo
-
-Under process...
-## Authors
-
-- [@AnkitVishwakarma](https://github.com/Ankit6098)
+![Dockerize the Application](https://github.com/user-attachments/assets/22bfa327-5447-40b7-94ec-c051413f93ef)
 
 
-## Features
+![Dockerize the Application](https://github.com/user-attachments/assets/d5ff5322-1494-45f2-943d-7958de0cd42b)
 
-- Create, Update, and Delete Tasks: Enable users to create new tasks, update existing tasks (e.g., mark as completed, edit task details), and delete tasks they no longer need.
-- Task Categories provides Implement the ability for users to categorize their tasks into different categories (e.g., work, personal, shopping) or assign labels/tags to tasks for better organization and filtering.
-- MongoDb to store your the user data
-## Run Locally
+- After that, tested the image by running a container named "node-app-container"
 
-Clone the project
+![Dockerize the Application](https://github.com/user-attachments/assets/b280ac74-d982-4b41-9130-ae9174f211d8)
 
-```bash
-  git clone https://github.com/Ankit6098/Todos-nodejs
-```
+![Dockerize the Application](https://github.com/user-attachments/assets/70f84657-2f9d-4100-9b71-26430a750cd1)
 
-Go to the project directory and open index.html file
+- The container also appears as running in Docker Desktop, confirming that the app is successfully containerized and deployed.
 
-```bash
-  cd Todos-nodejs
-```
+![Dockerize the Application](https://github.com/user-attachments/assets/a1f112ab-3a7c-4c03-8173-8fcf16310410)
 
-Install the packages
+- The application became accessible at :http://localhost:4000
+  
+![Dockerize the Application](https://github.com/user-attachments/assets/905536ef-4317-4dfe-ae73-e713f04ec8e4)
 
-```bash
-  npm install / npm i
-```
+### 🔹 Step 4: GitHub Actions to create a CI pipeline
+- Created a docker repository on Docker Hub.  
+- Used GitHub Actions to create a CI pipeline that builds the image and pushes it to
+- Used the `docker.yml` file in the CI/CD pipeline to build and push the Docker image to Docker Hub
+a private docker registry.
 
-Start the Server
-
-```bash
-    npm start / nodemon start
-```
-## Acknowledgements
-
- - [nodemon](https://nodemon.io/)
- - [mongoDb](https://www.mongodb.com/)
- - [mongoose](https://mongoosejs.com/)
+![Dockerize the Application](https://github.com/user-attachments/assets/b2b26ebe-32a1-4ad7-a4f0-b1bfa77bed4e)
 
 
-## Screenshots
+- At the end of Part 1, I had a working CI pipeline that pushes the updated Docker image to a the registry automatically whenever I push changes to the GitHub repo.
 
-![225232515-4c100b6b-52e4-40f8-a6d4-85e30dc2f5e7](https://github.com/Ankit6098/Todos-nodejs/assets/92246613/487f548f-7ca6-4183-9443-c88c9f79c3f0)
-![225232960-da554f1f-ba4a-41f8-9856-edaebe339d76](https://github.com/Ankit6098/Todos-nodejs/assets/92246613/25515d2e-1d72-498d-8044-59a01c6b9127)
-![225238829-05433362-5b16-454c-92d5-5e536fe6912e](https://github.com/Ankit6098/Todos-nodejs/assets/92246613/316d15ca-1fe8-4581-80b1-fc316340bba6)
-![225239140-226f8eae-d8b8-4055-8a68-d85d523c2422](https://github.com/Ankit6098/Todos-nodejs/assets/92246613/44a0c418-449e-446f-8a8e-3c4e14fca8bf)
-![225239221-caf86f3d-ef17-4d18-80a6-c72123ff5444](https://github.com/Ankit6098/Todos-nodejs/assets/92246613/2ee90ab0-95d4-44f4-80ac-b17b088ac1ce)
-![225239406-98b7ba7d-df97-4d27-bb66-596a32187d87](https://github.com/Ankit6098/Todos-nodejs/assets/92246613/960ff353-1ce9-4ef8-94e4-10af09184fd2)
-![225239841-4b5d77f0-4a54-4339-b6b3-b6a1be6776b5](https://github.com/Ankit6098/Todos-nodejs/assets/92246613/f5ffc3b8-480f-4d11-9a0b-c469e3c17e8e)
+![Dockerize the Application](https://github.com/user-attachments/assets/ecc0bc93-b4ad-4607-ac32-0bec186cbbcc)
 
 
-## Related
 
-Here are some other projects
+## Part 2 - Creating a Linux VM on your local machine and using Ansible to configure the machine
 
-[Alarm CLock - javascript](https://github.com/Ankit6098/Todos-nodejs)\
-[IMDb Clone - javascript](https://github.com/Ankit6098/IMDb-Clone)
+###  Step 1: Creating the Red Hat Linux VM
+- Created a Red Hat Linux virtual machine on my local machine using vmware
+- The VM was configured with the IP address and SSH access enabled (the IP address of the VM is: 192.168.72.128)
 
+###  Step 2: Setting Up Ansible on Local Machine
+- Installed Ansible on my local machine (the control node)
+- Created an inventory file `inventory.ini` with the IP address and SSH details of the VM
 
-## 🚀 About Me
-I'm a full stack developer...
+![Dockerize the Application](https://github.com/user-attachments/assets/00034040-5c72-4249-aced-b040293bb951)
 
+ ###  Step 3: Writing the Ansible Playbook
+ - Created a playbook file `setup-docker.yml` to automate the configuration steps
+ - The playbook installs required packages, adds Docker repository, and installs Docker on the Red Hat VM.
+ - Ran the Ansible playbook:
+   
+ ![Dockerize the Application](https://github.com/user-attachments/assets/e61601e7-9f7c-4d9e-a629-5d079a3b016e)
+ 
+- Verified that Docker was installed and running successfully on the VM:
+  
+![Dockerize the Application](https://github.com/user-attachments/assets/fa6239b5-1389-407d-bb33-00da4f56f11b)
 
-# Hi, I'm Ankit! 👋
-
-I'm a full stack developer 😎 ... Love to Develop Classic Unique fascinating and Eye Catching UI and Love to Create Projects and Building logics.
-## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ankithub.me/Resume/)
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColorwhite=)](https://www.linkedin.com/in/ankit-vishwakarma-6531221b0/)
-
-
-## Other Common Github Profile Sections
-🧠 I'm currently learning FullStack Developer Course from Coding Ninjas
-
-📫 How to reach me ankitvis609@gmail.com
-
-
-## 🛠 Skills
-React, Java, Javascript, HTML, CSS, Nodejs, ExpressJs, Mongodb, Mongoose...
+![Dockerize the Application](https://github.com/user-attachments/assets/ddc4f990-431d-47fb-b7c3-421a53705c2f)
 
 
-## Feedback
+## Part 3 - Running the Application with Docker Compose and Auto-Update
 
-If you have any feedback, please reach out to us at ankitvis609@gmail.com
+ ###  Step 1:  Preparing the Application on the VM
+ - Created the `docker-compose.yml`file that defines the required services and containers
+
+###  Step 2:  Running Docker Compose
+ - Pulling the image and starting the container :
+
+![Dockerize the Application](https://github.com/user-attachments/assets/93238c49-2ef9-4056-a78f-feee3d322b5c)
+
+###  Step 3: Enabling Continuous Image Update and health check :
+- To continuously check for changes in the image on the Docker registry, I chose Watchtower as the update automation tool:
+- Pulled the Watchtower image,ran Watchtower as a container, monitoring all running containers.The setup checks for new images every 30 seconds and updates the containers if any changes are found.
+
+![Dockerize the Application](https://github.com/user-attachments/assets/cad83ead-57b7-4bcb-ac57-ec3a4b9f52b6)
+
+- Accessed the running application via browser using the public IP of the RedHat VM on port 4000 to confirm that it's working properly:
+  
+![Dockerize the Application](https://github.com/user-attachments/assets/760bd8a8-ee66-49e4-b9b3-35ec46e0ce30)
+
+## Part 4 - Running the same Node.js application using Kubernetes instead of Docker Compose
+
+ ###  Step 1:  Install Kubernetes (Minikube or kubeadm)
+- On the RedHat VM, Minikube was installed (a local Kubernetes cluster tool) to set up a single-node Kubernetes environment.
+- kubectl was also installed to interact with the cluster.
+
+ ###  Step 2:  Creating `todo-deployment.yml` and `todo-service.yml` files
+
+  - Created  `todo-deployment.yml` file to define a Deployment for the Node.js app.It specifies the image, number of replicas, and container port.
+  - Created  `todo-service.yml` file to expose the Node.js app using a NodePort.
+  - Accessing the Node.js app in the browser using the VM’s IP address and the exposed NodePort:
+
+![Dockerize the Application](https://github.com/user-attachments/assets/e363de46-06b8-47b7-a8e4-e7415436dd8b)
+
 
