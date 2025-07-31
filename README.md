@@ -95,7 +95,7 @@ a private docker registry.
 
 ## Part 4 - Running the same Node.js application using Kubernetes instead of Docker Compose
 
- ###  Step 1:  Install Kubernetes (Minikube or kubeadm)
+ ###  Step 1:  Install Kubernetes (Minikube)
 - On the RedHat VM, Minikube was installed (a local Kubernetes cluster tool) to set up a single-node Kubernetes environment.
 - kubectl was also installed to interact with the cluster.
 
